@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>石油工程热工学 · 前三章学习笔记 | 思维导图 + 核心概念精讲</title>
+<meta name="description" content="中国石油大学《石油工程热工学》前三章（绪论·基本概念·理想气体）学习笔记：交互式思维导图、核心概念精讲、重难点标注、五大热力过程速查表。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#0f766e 100%);color:#fff;padding:58px 20px 48px;text-align:center}
+.hero .kicker{font-size:13px;letter-spacing:.25em;opacity:.72;margin-bottom:12px}
+.hero h1{font-size:36px;letter-spacing:.04em;margin-bottom:10px}
+.hero .sub{font-size:15px;opacity:.85;margin-bottom:20px}
+.hero .tag{display:inline-block;padding:4px 12px;border-radius:999px;font-size:12.5px;margin:3px 4px;background:rgba(255,255,255,.14)}
+/* ---------- nav ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0}
+.topnav .wrap{display:flex;flex-wrap:wrap}
+.topnav a{display:inline-block;padding:12px 14px;font-size:13.5px;color:#334155;text-decoration:none;border-bottom:2px solid transparent}
+.topnav a:hover{color:#1d4ed8;border-bottom-color:#1d4ed8}
+/* ---------- sections ---------- */
+main{padding:36px 20px 60px}
+section{margin-bottom:60px;scroll-margin-top:60px}
+.sec-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+h2{font-size:22px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+h2 .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:#1e3a8a;color:#fff;font-size:15px;flex:none}
+.sec-sub{color:#64748b;font-size:14px;margin-bottom:20px}
+.btn{border:1px solid #cbd5e1;background:#fff;color:#334155;border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer}
+.btn:hover{background:#f1f5f9}
+/* ---------- badges ---------- */
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600}
+.b-star{background:#fef3c7;color:#92400e}
+.b-hard{background:#fee2e2;color:#b91c1c}
+.b-warn{background:#ffedd5;color:#c2410c}
+/* ---------- mind map tree ---------- */
+.mm-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px 20px 22px;margin-bottom:18px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.mm-head{font-weight:700;font-size:15px;margin-bottom:2px;display:flex;align-items:center;gap:8px}
+.mm-head .dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot.ch0{background:#0f766e}.dot.ch1{background:#4338ca}.dot.ch3{background:#b45309}
+.mm-hint{font-size:12px;color:#94a3b8;margin-bottom:4px}
+.tree-scroll{overflow-x:auto;padding:16px 4px 6px}
+.mm{list-style:none;display:flex;flex-direction:column}
+.mm>li{position:relative;display:flex;align-items:center;padding-left:46px;margin:7px 0}
+/* 纵向脊线：连接同级各节点 */
+.mm>li::before{content:"";position:absolute;left:23px;top:0;bottom:0;border-left:2px solid #cbd5e1}
+.mm>li:first-child::before{top:50%}
+.mm>li:last-child::before{bottom:50%}
+.mm>li:only-child::before{display:none}
+/* 横向短线：从父脊线接到本节点 */
+.mm>li::after{content:"";position:absolute;left:-24px;top:50%;width:70px;border-top:2px solid #cbd5e1}
+.mm>li>.node+.mm{margin-left:24px}
+/* 根节点特殊处理 */
+.mm-root>li{padding-left:0;margin:0}
+.mm-root>li::before,.mm-root>li::after{display:none}
+/* 分支节点 → 其子级脊线的连接线 */
+.mm>li.branch>.node::before{content:"";position:absolute;left:100%;top:50%;width:47px;border-top:2px solid #cbd5e1}
+.mm>li.collapsed>.node::before{display:none}
+/* 节点样式 */
+.node{position:relative;border-radius:10px;padding:8px 14px;font-size:13.5px;line-height:1.5;background:#fff;border:2px solid;max-width:250px}
+.node small{display:block;font-size:11px;opacity:.75;font-weight:400}
+.node.r{font-size:16px;font-weight:800;padding:12px 18px}
+.node.s{font-weight:700}
+.node.l{font-weight:400;font-size:12.5px;padding:6px 10px;border-width:1.5px;max-width:235px}
+.ch0{border-color:#14b8a6;background:#f0fdfa;color:#0f766e}
+.ch1{border-color:#6366f1;background:#eef2ff;color:#3730a3}
+.ch3{border-color:#f59e0b;background:#fffbeb;color:#92400e}
+.node.r.ch0{background:#0f766e;border-color:#0f766e;color:#fff}
+.node.r.ch1{background:#4338ca;border-color:#4338ca;color:#fff}
+.node.r.ch3{background:#b45309;border-color:#b45309;color:#fff}
+.node.l:hover,.node.s:hover{box-shadow:0 2px 10px rgba(15,23,42,.14)}
+/* 折叠开关 */
+li.branch>.node{cursor:pointer}
+li.branch>.node::after{content:"−";position:absolute;right:-9px;top:-9px;width:19px;height:19px;border-radius:50%;background:#334155;color:#fff;font-size:12px;line-height:19px;text-align:center;font-weight:700}
+li.collapsed>.node::after{content:"+"}
+li.collapsed>.node+.mm{display:none}
+/* ---------- 概念卡片 ---------- */
+.ch-group{margin-bottom:28px}
+.ch-label{display:inline-block;color:#fff;font-size:13px;font-weight:700;padding:4px 16px;border-radius:999px;margin-bottom:12px}
+.ch-label.ch0{background:#0f766e}.ch-label.ch1{background:#4338ca}.ch-label.ch3{background:#b45309}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+.card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card p{font-size:13.5px;color:#334155;margin-bottom:6px}
+.card p b{color:#0f172a}
+.card .why{color:#64748b;font-size:12.5px;margin-top:4px}
+.card .trap{background:#fff7ed;border-left:3px solid #f97316;padding:6px 10px;border-radius:0 8px 8px 0;font-size:13px;color:#7c2d12;margin-top:8px}
+/* ---------- 表格 ---------- */
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:780px}
+th{background:#b45309;color:#fff;padding:10px 12px;text-align:left;font-size:13px;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+tbody tr:nth-child(even) td{background:#fffdf7}
+td.f{font-family:"Times New Roman",Georgia,serif;font-size:13.5px}
+.rowname{font-weight:700;white-space:nowrap}
+.mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:16px}
+.mini{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px 18px;font-size:13.5px;color:#334155}
+.mini h4{font-size:14px;margin-bottom:6px;color:#92400e}
+/* ---------- 公式卡 ---------- */
+.fcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+.fcard{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px 18px}
+.fcard h4{font-size:14px;color:#1e3a8a;margin-bottom:8px}
+.fcard .f{font-family:"Times New Roman",Georgia,serif;font-size:15.5px;padding:3px 0}
+.fcard .note{font-size:12.5px;color:#64748b;margin-top:6px}
+/* ---------- 判断题 ---------- */
+.quiz{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:6px 20px}
+.quiz details{border-bottom:1px dashed #e2e8f0;padding:11px 0}
+.quiz details:last-child{border-bottom:none}
+.quiz summary{cursor:pointer;font-size:14px;font-weight:600}
+.quiz .ans{margin-top:8px;font-size:13.5px;color:#334155}
+.quiz .verdict{font-weight:800}
+.quiz .yes{color:#15803d}.quiz .no{color:#b91c1c}
+/* ---------- 速记 ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+footer{background:#0f172a;color:#94a3b8;text-align:center;padding:26px 20px;font-size:12.5px;margin-top:20px}
+footer a{color:#cbd5e1}
+@media print{.topnav{display:none}body{background:#fff}.mm-card,.card,.fcard,.mini{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">中国石油大学 ·《石油工程热工学》· 2026</p>
+  <h1>前三章学习笔记</h1>
+  <p class="sub">0 绪论 &nbsp;·&nbsp; 1 基本概念 &nbsp;·&nbsp; 3 理想气体的性质与热力过程</p>
+  <div>
+    <span class="tag">⭐ 重点</span>
+    <span class="tag">🔺 难点</span>
+    <span class="tag">⚠️ 易错</span>
+    <span class="tag">💡 点击思维导图节点可折叠 / 展开</span>
+  </div>
+</header>
+
+<nav class="topnav">
+  <div class="wrap">
+    <a href="#mindmap">🧠 思维导图</a>
+    <a href="#concepts">📖 核心概念精讲</a>
+    <a href="#processes">🔄 五大热力过程</a>
+    <a href="#formulas">🧮 公式速查</a>
+    <a href="#quiz">✅ 易错判断</a>
+    <a href="#final">⚡ 考前速记</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ================= 1 思维导图 ================= -->
+<section id="mindmap">
+  <div class="sec-head">
+    <h2><span class="num">1</span>主线思维导图</h2>
+    <div>
+      <button class="btn" id="btnExpand">全部展开</button>
+      <button class="btn" id="btnCollapse">折叠细节</button>
+    </div>
+  </div>
+  <p class="sec-sub">学习脉络：绪论（为什么学）→ 基本概念（建立热力学的"语言"）→ 理想气体（第一套能定量计算的模型）。</p>
+
+  <!-- 0 绪论 -->
+  <div class="mm-card">
+    <div class="mm-head"><span class="dot ch0"></span>0 绪论 —— 课程地图</div>
+    <div class="tree-scroll">
+      <ul class="mm mm-root">
+        <li class="branch">
+          <div class="node r ch0">0 绪论<small>为什么学 · 学什么</small></div>
+          <ul class="mm">
+            <li class="branch">
+              <div class="node s ch0">能量与热能</div>
+              <ul class="mm">
+                <li><div class="node l ch0">能量＝物质运动的度量 · 六种形式</div></li>
+                <li><div class="node l ch0">热能本质＝分子热运动 ⚠️ 不是感觉、不是温度</div></li>
+                <li><div class="node l ch0">载体多为流体 → 直接利用 / 转化利用</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch0">两大理论支柱</div>
+              <ul class="mm">
+                <li><div class="node l ch0">热力学：能量转换的"量"</div></li>
+                <li><div class="node l ch0">传热学：温差传热的"快慢"</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch0">课程框架</div>
+              <ul class="mm">
+                <li><div class="node l ch0">热力学 7 章：概念→热一律→理想气体→热二律→水蒸气→动力循环→制冷</div></li>
+                <li><div class="node l ch0">传热学 5 章：方式→导热→对流→辐射→应用</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch0">石油工程结合点</div>
+              <ul class="mm">
+                <li><div class="node l ch0">井温测井 · 注蒸汽管路热损失 · 井筒温度场</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 1 基本概念 -->
+  <div class="mm-card">
+    <div class="mm-head"><span class="dot ch1"></span>1 基本概念 —— 建立热力学语言</div>
+    <div class="tree-scroll">
+      <ul class="mm mm-root">
+        <li class="branch">
+          <div class="node r ch1">1 基本概念<small>系统 · 参数 · 平衡 · 过程 · 功热</small></div>
+          <ul class="mm">
+            <li class="branch">
+              <div class="node s ch1">热力系统</div>
+              <ul class="mm">
+                <li><div class="node l ch1">工质宜选气态 · 热机：吸热→膨胀做功→排热</div></li>
+                <li><div class="node l ch1">四类系统 ⭐ 闭口 / 开口 / 绝热 / 孤立</div></li>
+                <li><div class="node l ch1">⚠️ 闭口系质量不变，体积可以变</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch1">状态参数</div>
+              <ul class="mm">
+                <li><div class="node l ch1">广延量（可加）÷ m ＝ 比参数</div></li>
+                <li><div class="node l ch1">强度量（p、T）不可加</div></li>
+                <li><div class="node l ch1">基本参数：p、v、T（可直接测量）</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch1">压力与温度 ⭐</div>
+              <ul class="mm">
+                <li><div class="node l ch1">⚠️ 只有绝对压力是状态参数</div></li>
+                <li><div class="node l ch1">第零定律 → 温标三要素</div></li>
+                <li><div class="node l ch1">T = t + 273.15（温差 1 K = 1 ℃）</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch1">平衡状态 ⭐</div>
+              <ul class="mm">
+                <li><div class="node l ch1">四平衡：热 / 力 / 相 / 化学</div></li>
+                <li><div class="node l ch1">⚠️ 平衡 ≠ 稳定 ≠ 均匀</div></li>
+                <li><div class="node l ch1">只有平衡态才能用参数整体描述</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch1">状态方程</div>
+              <ul class="mm">
+                <li><div class="node l ch1">状态公理 N = n + 1 → 只需 2 个独立参数</div></li>
+                <li><div class="node l ch1">pv = R<sub>g</sub>T · p-v 图一点＝一个平衡态</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch1">过程与功热</div>
+              <ul class="mm">
+                <li><div class="node l ch1">准平衡：处处无限接近平衡态</div></li>
+                <li><div class="node l ch1">可逆 ＝ 准平衡 ＋ 无耗散 ⭐</div></li>
+                <li><div class="node l ch1">δw = p dv ↔ δq = T ds（熵的定义）</div></li>
+                <li><div class="node l ch1">⚠️ 功与热都是过程量，非全微分</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3 理想气体 -->
+  <div class="mm-card">
+    <div class="mm-head"><span class="dot ch3"></span>3 理想气体的性质与热力过程 —— 第一套可算模型</div>
+    <div class="tree-scroll">
+      <ul class="mm mm-root">
+        <li class="branch">
+          <div class="node r ch3">3 理想气体<small>状态方程 · 物性 · 混合气 · 热力过程</small></div>
+          <ul class="mm">
+            <li class="branch">
+              <div class="node s ch3">理想气体状态方程</div>
+              <ul class="mm">
+                <li><div class="node l ch3">三假设：无分子体积 · 无分子引力 · 弹性碰撞</div></li>
+                <li><div class="node l ch3">适用：高温低压、远离液态 ⚠️</div></li>
+                <li><div class="node l ch3">R = 8.314 普适；R<sub>g</sub> = R/M 随气体 ⭐</div></li>
+                <li><div class="node l ch3">实际气体：压缩因子 Z · 范德瓦尔方程</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch3">热容与 u、h、s ⭐</div>
+              <ul class="mm">
+                <li><div class="node l ch3">u、h 只是温度的单值函数</div></li>
+                <li><div class="node l ch3">Δu = c<sub>V</sub>ΔT · Δh = c<sub>p</sub>ΔT 对任意过程成立 ⚠️</div></li>
+                <li><div class="node l ch3">迈耶公式 c<sub>p</sub> − c<sub>V</sub> = R<sub>g</sub> · γ = c<sub>p</sub>/c<sub>V</sub></div></li>
+                <li><div class="node l ch3">熵变三式 · 熵是状态参数 ⭐</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch3">理想混合气体</div>
+              <ul class="mm">
+                <li><div class="node l ch3">道尔顿分压定律 · 分体积定律</div></li>
+                <li><div class="node l ch3">成分 w、x、φ（且 φ = x）及换算</div></li>
+                <li><div class="node l ch3">平均 M、R<sub>g</sub>；比热按质量分数加权</div></li>
+              </ul>
+            </li>
+            <li class="branch">
+              <div class="node s ch3">热力过程 ⭐ 全章核心</div>
+              <ul class="mm">
+                <li><div class="node l ch3">分析四步：方程→参数→图→w / w<sub>t</sub> / q</div></li>
+                <li><div class="node l ch3">定容：w = 0，q = c<sub>V</sub>ΔT</div></li>
+                <li><div class="node l ch3">定压：w<sub>t</sub> = 0，q = c<sub>p</sub>ΔT</div></li>
+                <li><div class="node l ch3">定温：q = w = R<sub>g</sub>T·ln(v₂/v₁)</div></li>
+                <li><div class="node l ch3">定熵：pv<sup>κ</sup> = 常数，w = −Δu</div></li>
+                <li><div class="node l ch3">多变：pv<sup>n</sup> = 常数，统一四过程</div></li>
+                <li><div class="node l ch3">图形：绝热线更陡 · 定容线更陡 ⭐</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 核心概念精讲 ================= -->
+<section id="concepts">
+  <h2><span class="num">2</span>核心概念精讲</h2>
+  <p class="sec-sub">每个概念按"是什么 → 怎么理解 → 易错点"展开，覆盖课件重难点与作业题考点。</p>
+
+  <div class="ch-group">
+    <span class="ch-label ch0">第 0 章 绪论</span>
+    <div class="cards">
+      <div class="card">
+        <h3>热力学 vs 传热学 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>热力学研究能量及其相互转化的规律，回答"转换的<b>量</b>与效率"；传热学研究由<b>温差</b>引起的热能传递规律，回答"传递的<b>快慢</b>与分布"。</p>
+        <p><b>怎么理解：</b>同一根注蒸汽管道——热力学算"蒸汽还剩多少可用能量"，传热学算"每米管道每秒散失多少瓦"。一个管存量与转化，一个管速率。</p>
+      </div>
+      <div class="card">
+        <h3>热能的本质 <span class="tag b-warn">⚠️ 易错</span></h3>
+        <p><b>是什么：</b>热能＝分子热运动动能与位能之和（不涉及化学变化和核反应的内热能）。温度高低是分子运动剧烈程度的宏观表现。</p>
+        <p><b>怎么理解：</b>"热"不是人的感觉，也不等于温度——相同温度不同人感觉不同。</p>
+        <p class="why">🔗 伏笔：理想气体忽略分子间位能后，热力学能只剩分子动能 → u 只是 T 的函数。这是第三章一切结论的物理根源。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-group">
+    <span class="ch-label ch1">第 1 章 基本概念</span>
+    <div class="cards">
+      <div class="card">
+        <h3>四类热力系统 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>闭口系（无物质交换，控制质量）、开口系（有物质交换，控制容积）、绝热系（无热量交换）、孤立系（既无能量又无物质交换）。</p>
+        <p><b>怎么理解：</b>闭口系"质量锁死、边界可动"（气缸活塞）；开口系"容积锁死、物质进出"（压气机、井筒）。石油案例：油管流动段＝开口系，定容岩心腔＝闭口系。</p>
+        <p class="trap"><b>⚠️ 易错：</b>"闭口系统体积不可能发生变化"是错的——只是质量恒定，体积照样能变。</p>
+      </div>
+      <div class="card">
+        <h3>广延量与强度量 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>广延量正比于质量、可以相加（V、U、H、S）；强度量与质量无关、不可加（p、T）。</p>
+        <p><b>怎么理解：</b>广延量 ÷ 质量 ＝ 比参数（v、u、h、s），比参数具有强度量性质。快速判据：把系统一分为二，该量减半的是广延量，不变的是强度量。</p>
+        <p class="why">🔗 为什么要分：判断哪些量能直接相加、状态方程该对哪个量写（比参数用小写）。</p>
+      </div>
+      <div class="card">
+        <h3>绝对压力、表压与真空度 <span class="tag b-star">⭐ 重点</span> <span class="tag b-warn">⚠️ 易错</span></h3>
+        <p><b>是什么：</b>压力表测的是与大气压 p<sub>b</sub> 的差：表压 p<sub>e</sub> = p − p<sub>b</sub>（高于大气压）；真空度 p<sub>v</sub> = p<sub>b</sub> − p（低于大气压）。</p>
+        <p><b>怎么理解：</b>只有<b>绝对压力</b>才是状态参数，热力计算前必须先换算成绝对压力。</p>
+        <p class="trap"><b>⚠️ 易错：</b>工质压力不变时，若大气压 p<sub>b</sub> 变化（天气、海拔），表计读数也会变——所以表压/真空度不能作状态参数。</p>
+      </div>
+      <div class="card">
+        <h3>热力学第零定律与温标 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>A、B 分别与 C 热平衡 ⇒ A、B 彼此热平衡 ⇒ 存在数值相等的状态参数——温度。</p>
+        <p><b>怎么理解：</b>这就是温度计（C）能代替直接比较冷热的理论依据。温标三要素：固定点、分度方法与单位、测温物性。</p>
+        <p class="why">常用换算：T(K) = t(℃) + 273.15（温差 1 K = 1 ℃）；t℉ = 1.8·t℃ + 32；水三相点 0.01 ℃ = 273.16 K。⚠️ 代入状态方程必须用 K。</p>
+      </div>
+      <div class="card">
+        <h3>平衡状态：平衡 ≠ 稳定 ≠ 均匀 <span class="tag b-star">⭐ 重点</span> <span class="tag b-hard">🔺 难点</span></h3>
+        <p><b>是什么：</b>不受外界影响时，系统内部宏观性质均匀一致、不随时间变化、不存在宏观物理过程，称为平衡状态。</p>
+        <p><b>怎么理解：</b>四种不平衡势（温差 / 压差 / 相组成差 / 化学差）分别驱动热传递、做功、相变、反应；势差消失即对应四种平衡。只有平衡态才有确定的参数值可写进方程——这就是热力学只研究平衡态的原因。</p>
+        <p class="trap"><b>⚠️ 易错：</b>① 稳态导热各点温度不随时间变（稳定）却存在温差（不平衡）→ 稳定不一定平衡，平衡一定稳定；② 气液两相共存是平衡态但密度不均匀 → 均匀不是平衡的必要条件。</p>
+      </div>
+      <div class="card">
+        <h3>状态公理 N = n + 1 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>确定平衡状态所需的独立参数数目 = 与外界交换功的种类数 n + 1（热量传递这一项）。</p>
+        <p><b>怎么理解：</b>简单可压缩系只有体积功一种功 → N = 2，p、v、T 中任意两个即可锁定状态。正因如此才存在 pv = R<sub>g</sub>T 这样的二元关系，才能把状态画成 p-v 图上的一个点。</p>
+      </div>
+      <div class="card">
+        <h3>准平衡过程与可逆过程 <span class="tag b-star">⭐ 重点</span> <span class="tag b-hard">🔺 难点</span></h3>
+        <p><b>是什么：</b>准平衡过程——不平衡势无限小、过程足够慢，每个中间状态都无限接近平衡态；可逆过程——系统沿原路逆行后，<b>系统与外界同时</b>完全复原。</p>
+        <p><b>怎么理解：</b>可逆 ＝ 准平衡 ＋ 无耗散效应（无摩擦、无温差传热、无扩散混合）。准平衡只约束"系统内部"；可逆还要求"外界"不留痕迹，条件更苛刻。</p>
+        <p class="why">🔗 为什么引入：实际过程都不可逆，但可逆过程给出效率的<b>理论上限</b>——先按可逆计算，再对不可逆因素修正。</p>
+      </div>
+      <div class="card">
+        <h3>功与热是过程量 · 熵的引入 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>可逆过程 δw = p dv、δq = T ds；p-v 图过程线下面积＝功量，T-s 图过程线下面积＝热量。</p>
+        <p><b>怎么理解：</b>功和热都是"路径函数"（δ 不是全微分），说"某个状态含有多少功/热"没有意义。熵正是为了让"热"拥有一张与 p-v 图对称的状态图而定义的：δs = δq / T（可逆）。</p>
+        <p class="why">判热方向：ds &gt; 0 吸热；ds &lt; 0 放热；ds = 0 定熵（可逆绝热）。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-group">
+    <span class="ch-label ch3">第 3 章 理想气体的性质与热力过程</span>
+    <div class="cards">
+      <div class="card">
+        <h3>理想气体模型与适用范围 <span class="tag b-star">⭐ 重点</span> <span class="tag b-warn">⚠️ 易错</span></h3>
+        <p><b>是什么：</b>三条微观假设——分子自身体积不计、分子间作用力不计、分子间及与器壁均为弹性碰撞。</p>
+        <p><b>怎么理解：</b>忽略分子间位能后，热力学能只剩分子动能 → u 只是温度的函数，这是本章一切公式的出发点。</p>
+        <p class="trap"><b>⚠️ 判断口诀：</b>温度不太低、压力不太高、远离液态。✓ 常温 p ≤ 5 MPa 的 O₂/N₂/H₂/CO、燃气烟气、分压力很低的水蒸气；✗ 蒸汽动力装置中的高压水蒸气（离液态不远）。</p>
+      </div>
+      <div class="card">
+        <h3>R 与 R<sub>g</sub>：一个普适、一个专属 <span class="tag b-star">⭐ 重点</span> <span class="tag b-warn">⚠️ 易错</span></h3>
+        <p><b>是什么：</b>R = 8.314 J/(mol·K) 对任何气体都相同；R<sub>g</sub> = R / M 是气体常数，只随气体种类变（空气 287 J/(kg·K)）。</p>
+        <p class="trap"><b>⚠️ 易错：</b>摩尔基准用 pv = nRT，质量基准用 pv = mR<sub>g</sub>T，两套方程不能混；注意单位 J/(mol·K) 与 J/(kg·K) 的区别。标准状态（101325 Pa、0 ℃）下 V<sub>m</sub> = 22.414 L/mol。</p>
+      </div>
+      <div class="card">
+        <h3>迈耶公式与比热比 <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>c<sub>p</sub> − c<sub>V</sub> = R<sub>g</sub>；γ = c<sub>p</sub>/c<sub>V</sub>；c<sub>V</sub> = R<sub>g</sub>/(γ−1)，c<sub>p</sub> = γR<sub>g</sub>/(γ−1)。</p>
+        <p><b>怎么理解：</b>同样升温 1 K，定压比定容多吸收的热量，正好用于对外做体积功（pv = R<sub>g</sub>T 的增量）——这就是两个热容之差的物理来源。</p>
+        <p class="why">γ 数值：单原子 1.67、双原子 1.40（空气 ≈ 1.4）、多原子 ≈ 1.29。比热容本质：c = δq/dT 与过程有关，故才分 c<sub>V</sub>、c<sub>p</sub>。</p>
+      </div>
+      <div class="card">
+        <h3>Δu、Δh 公式的"万能性" <span class="tag b-star">⭐ 重点</span> <span class="tag b-warn">⚠️ 易错</span></h3>
+        <p><b>是什么：</b>对理想气体的<b>任何过程</b>（定容/定压/定温/绝热/多变，甚至不可逆），只要初终温度确定：Δu = c<sub>V</sub>(T₂−T₁)、Δh = c<sub>p</sub>(T₂−T₁)。</p>
+        <p><b>为什么：</b>u、h 是状态参数且只是 T 的函数 → 只看初终态、与路径无关。</p>
+        <p class="trap"><b>⚠️ 最常见错误：</b>把 Δu = c<sub>V</sub>ΔT 当成"只能用于定容过程"——它对理想气体任何过程都成立。</p>
+      </div>
+      <div class="card">
+        <h3>熵是状态参数 <span class="tag b-star">⭐ 重点</span> <span class="tag b-hard">🔺 难点</span></h3>
+        <p><b>是什么：</b>Δs 的三个公式（见公式速查）只取决于初、终态。</p>
+        <p><b>怎么理解：</b>熵变公式由可逆过程导出，但状态参数与路径无关 → 计算不可逆过程的熵变时，可以"虚构一条连接同样初终态的可逆路径"来算。</p>
+        <p class="trap"><b>⚠️ 易错：</b>绝热 ≠ 定熵。只有<b>可逆</b>绝热才 ds = 0；不可逆绝热过程熵必增。</p>
+      </div>
+      <div class="card">
+        <h3>混合气体：当作一种"虚拟纯气体" <span class="tag b-star">⭐ 重点</span></h3>
+        <p><b>是什么：</b>道尔顿分压定律 p = Σp<sub>i</sub>、分体积定律 V = ΣV<sub>i</sub>（仅适用理想气体）；成分有 w（质量）、x（摩尔）、φ（体积）三种，且 φ = x。</p>
+        <p><b>怎么理解：</b>求出平均摩尔质量 M = Σx<sub>i</sub>M<sub>i</sub> 和平均气体常数 R<sub>g</sub> = Σw<sub>i</sub>R<sub>g,i</sub> 后，混合气体即可套用理想气体的全部公式；比热容按质量分数加权：c<sub>p</sub> = Σw<sub>i</sub>c<sub>p,i</sub>。</p>
+      </div>
+      <div class="card">
+        <h3>多变过程与多变热容 <span class="tag b-hard">🔺 难点</span></h3>
+        <p><b>是什么：</b>pv<sup>n</sup> = 常数。n = 0 定压、n = 1 定温、n = κ 定熵、n = ±∞ 定容；w = R<sub>g</sub>(T₁−T₂)/(n−1)，w<sub>t</sub> = n·w，c<sub>n</sub> = (n−κ)c<sub>V</sub>/(n−1)。</p>
+        <p><b>怎么理解：</b>多变热容 c<sub>n</sub> 把任意过程的热量写成 q = c<sub>n</sub>ΔT。c<sub>n</sub> 可正、可负、可为无穷——n 介于 1 与 κ 之间的膨胀过程 c<sub>n</sub> &lt; 0，会出现"吸热反而降温"的反直觉现象。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 五大热力过程 ================= -->
+<section id="processes">
+  <h2><span class="num">3</span>五大热力过程速查</h2>
+  <p class="sec-sub">分析套路四步：① 过程方程 → ② 初终态参数关系 → ③ 画 p-v / T-s 图 → ④ 求 w、w<sub>t</sub>、q。技术功 w<sub>t</sub> = −∫v dp = w − Δ(pv)。表中 ΔT = T₂ − T₁，比热容取定值。</p>
+  <div class="tblwrap">
+    <table>
+      <thead>
+        <tr><th>过程</th><th>过程方程</th><th>参数关系</th><th>膨胀功 w</th><th>技术功 w<sub>t</sub></th><th>热量 q</th><th>一句话特征</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rowname">定容</td>
+          <td class="f">v = 常数</td><td class="f">p / T = 常数</td>
+          <td class="f">0</td><td class="f">−v·Δp</td><td class="f">c<sub>V</sub>ΔT ＝ Δu</td>
+          <td>吸热全部变为内能</td>
+        </tr>
+        <tr>
+          <td class="rowname">定压</td>
+          <td class="f">p = 常数</td><td class="f">v / T = 常数</td>
+          <td class="f">pΔv ＝ R<sub>g</sub>ΔT</td><td class="f">0</td><td class="f">c<sub>p</sub>ΔT ＝ Δh</td>
+          <td>吸热＝焓增</td>
+        </tr>
+        <tr>
+          <td class="rowname">定温</td>
+          <td class="f">T = 常数</td><td class="f">pv = 常数</td>
+          <td class="f">R<sub>g</sub>T·ln(v₂/v₁) ＝ R<sub>g</sub>T·ln(p₁/p₂)</td><td class="f">＝ w</td><td class="f">＝ w ＝ w<sub>t</sub></td>
+          <td>Δu ＝ Δh ＝ 0，吸热全部做功</td>
+        </tr>
+        <tr>
+          <td class="rowname">定熵<br><small>（可逆绝热）</small></td>
+          <td class="f">pv<sup>κ</sup> = 常数</td><td class="f">T₂/T₁ ＝ (p₂/p₁)<sup>(κ−1)/κ</sup></td>
+          <td class="f">−Δu ＝ c<sub>V</sub>(T₁−T₂) ＝ R<sub>g</sub>(T₁−T₂)/(κ−1)</td><td class="f">κw ＝ −Δh</td><td class="f">0</td>
+          <td>膨胀做功全靠消耗内能</td>
+        </tr>
+        <tr>
+          <td class="rowname">多变</td>
+          <td class="f">pv<sup>n</sup> = 常数</td><td class="f">把 κ 换成 n 即可</td>
+          <td class="f">R<sub>g</sub>(T₁−T₂)/(n−1)（n ≠ 1）</td><td class="f">n·w（n ≠ ∞）</td><td class="f">c<sub>n</sub>ΔT，c<sub>n</sub> = (n−κ)c<sub>V</sub>/(n−1)</td>
+          <td>n = 0、1、κ、∞ 时退化为上面四过程</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mini-cards">
+    <div class="mini">
+      <h4>📐 图形特征①：T-s 图上定容线比定压线陡 ⭐</h4>
+      两者都是指数曲线，斜率 dT/ds = T/c；因为 c<sub>V</sub> &lt; c<sub>p</sub>，所以定容线更陡。同一温升下定容线对应的熵增更小。
+    </div>
+    <div class="mini">
+      <h4>📐 图形特征②：p-v 图上绝热线比定温线陡 ⭐</h4>
+      定温线斜率 −p/v，绝热线斜率 −κp/v；κ &gt; 1，绝热线更陡。膨胀时绝热降压更快。
+    </div>
+    <div class="mini">
+      <h4>⚠️ 公式适用边界</h4>
+      w = −Δu 只用到第一定律，适用于<b>任何工质、任何绝热过程</b>（可逆或不可逆）；含 κ 的公式（如 R<sub>g</sub>(T₁−T₂)/(κ−1)）只适用于<b>定比热理想气体的可逆</b>过程。
+    </div>
+    <div class="mini">
+      <h4>💡 定温过程技巧</h4>
+      q = w = w<sub>t</sub> = R<sub>g</sub>T·ln(v₂/v₁) = R<sub>g</sub>T·ln(p₁/p₂)；且 q = TΔs 对实际气体或液体的可逆定温过程同样适用。
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 公式速查 ================= -->
+<section id="formulas">
+  <h2><span class="num">4</span>公式速查卡</h2>
+  <div class="fcards">
+    <div class="fcard">
+      <h4>① 理想气体状态方程</h4>
+      <div class="f">pv = R<sub>g</sub>T　　pv = mR<sub>g</sub>T　　pv = nRT</div>
+      <div class="f">R<sub>g</sub> = R / M　　R = 8.314 J/(mol·K)</div>
+      <p class="note">R 普适、R<sub>g</sub> 专属；标准状态 V<sub>m</sub> = 22.414 L/mol。</p>
+    </div>
+    <div class="fcard">
+      <h4>② 热容关系</h4>
+      <div class="f">c<sub>p</sub> − c<sub>V</sub> = R<sub>g</sub>（迈耶公式）</div>
+      <div class="f">γ = c<sub>p</sub>/c<sub>V</sub>　　c<sub>V</sub> = R<sub>g</sub>/(γ−1)　　c<sub>p</sub> = γR<sub>g</sub>/(γ−1)</div>
+      <p class="note">定值摩尔热容：单原子 γ=1.67，双原子 γ=1.40，多原子 γ≈1.29。</p>
+    </div>
+    <div class="fcard">
+      <h4>③ 热力学能与焓（任意过程通用）⭐</h4>
+      <div class="f">du = c<sub>V</sub>dT　　dh = c<sub>p</sub>dT</div>
+      <div class="f">Δu = c<sub>V</sub>(T₂ − T₁)　　Δh = c<sub>p</sub>(T₂ − T₁)</div>
+      <p class="note">理想气体 u、h 只是 T 的单值函数；h = u + pv = u + R<sub>g</sub>T。</p>
+    </div>
+    <div class="fcard">
+      <h4>④ 熵变三式（状态参数，只看初终态）⭐</h4>
+      <div class="f">Δs = c<sub>V</sub>ln(T₂/T₁) + R<sub>g</sub>ln(v₂/v₁)</div>
+      <div class="f">Δs = c<sub>p</sub>ln(T₂/T₁) − R<sub>g</sub>ln(p₂/p₁)</div>
+      <div class="f">Δs = c<sub>V</sub>ln(p₂/p₁) + c<sub>p</sub>ln(v₂/v₁)</div>
+      <p class="note">由可逆过程导出，但理想气体任何过程的熵变都能用。</p>
+    </div>
+    <div class="fcard">
+      <h4>⑤ 功与热的可逆计算式</h4>
+      <div class="f">w = ∫₁² p dv　　δw = p dv</div>
+      <div class="f">w<sub>t</sub> = −∫ v dp ＝ w − Δ(pv)</div>
+      <div class="f">q = ∫₁² T ds　　δq = T ds</div>
+      <p class="note">p-v 图下面积＝功，T-s 图下面积＝热；δ 非全微分（过程量）。</p>
+    </div>
+    <div class="fcard">
+      <h4>⑥ 绝热（定熵）过程</h4>
+      <div class="f">pv<sup>κ</sup> = 常数　　T₂/T₁ = (p₂/p₁)<sup>(κ−1)/κ</sup></div>
+      <div class="f">w = −Δu = c<sub>V</sub>(T₁−T₂) = R<sub>g</sub>(T₁−T₂)/(κ−1)</div>
+      <div class="f">w<sub>t</sub> = κw = −Δh</div>
+      <p class="note">w = −Δu 适用于任何绝热过程；其余限定比热理想气体可逆情形。</p>
+    </div>
+    <div class="fcard">
+      <h4>⑦ 多变过程</h4>
+      <div class="f">pv<sup>n</sup> = 常数　　n: 0 定压 · 1 定温 · κ 定熵 · ∞ 定容</div>
+      <div class="f">w = R<sub>g</sub>(T₁−T₂)/(n−1)　　w<sub>t</sub> = n·w</div>
+      <div class="f">c<sub>n</sub> = (n−κ)c<sub>V</sub>/(n−1)（多变热容）</div>
+      <p class="note">Δu、Δh、Δs 一律按理想气体通用公式计算。</p>
+    </div>
+    <div class="fcard">
+      <h4>⑧ 理想混合气体</h4>
+      <div class="f">p = Σp<sub>i</sub>　　V = ΣV<sub>i</sub>　　φ<sub>i</sub> = x<sub>i</sub></div>
+      <div class="f">M = Σx<sub>i</sub>M<sub>i</sub>　　R<sub>g</sub> = R/M = Σw<sub>i</sub>R<sub>g,i</sub></div>
+      <div class="f">c<sub>p</sub> = Σw<sub>i</sub>c<sub>p,i</sub>　　c<sub>V</sub> = Σw<sub>i</sub>c<sub>V,i</sub></div>
+      <p class="note">w<sub>i</sub> = x<sub>i</sub>M<sub>i</sub>/Σx<sub>j</sub>M<sub>j</sub>；比热按质量分数加权。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 易错判断 ================= -->
+<section id="quiz">
+  <h2><span class="num">5</span>易错判断（对照作业题考点）</h2>
+  <p class="sec-sub">先自己判断对错，再点击展开答案。</p>
+  <div class="quiz">
+    <details>
+      <summary>1. 闭口系统的体积不可能发生变化。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>闭口系只是与外界<b>无物质交换</b>（质量恒定），边界可以移动——气缸内气体推动活塞时体积照样变化。</div>
+    </details>
+    <details>
+      <summary>2. 表压力或真空度可以作为状态参数进行热力计算。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>它们都依赖大气压 p<sub>b</sub>：工质压力不变时，p<sub>b</sub> 随天气/海拔变化，表计读数也会变。只有<b>绝对压力</b>才是状态参数。</div>
+    </details>
+    <details>
+      <summary>3. 稳定状态就是平衡状态。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>稳态导热时各点温度不随时间变（稳定），但内部存在温差（不平衡）。<b>稳定不一定平衡，平衡一定稳定。</b></div>
+    </details>
+    <details>
+      <summary>4. 开口系统既有能量交换，又有质量交换。</summary>
+      <div class="ans"><span class="verdict yes">✓ 对。</span>开口系以与外界交换物质为特征（进/出口），同时伴随功量与热量的交换。</div>
+    </details>
+    <details>
+      <summary>5. 不可逆过程就是无法回复到初态的过程。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>不可逆的本质是：过程逆行后<b>不能使系统和外界同时复原</b>——系统也许能回到初态，但必然给外界留下变化（如温差传热、摩擦耗散）。</div>
+    </details>
+    <details>
+      <summary>6. Δu = c<sub>V</sub>ΔT 只能用于定容过程。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>理想气体的 u 只是温度的函数，该式适用于<b>任何过程</b>——定压加热和绝热压缩只要初终温度相同，Δu 就相同。</div>
+    </details>
+    <details>
+      <summary>7. 理想气体熵变公式由可逆过程导出，因此不能用于不可逆过程。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>熵是<b>状态参数</b>，只取决于初终态——不可逆过程的熵变同样可用这三式计算（初终态须为平衡态）。</div>
+    </details>
+    <details>
+      <summary>8. 绝热过程一定是定熵过程。</summary>
+      <div class="ans"><span class="verdict no">✗ 错。</span>只有<b>可逆</b>绝热过程才 ds = δq/T = 0（定熵）；不可逆绝热过程因耗散效应熵增。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= 6 考前速记 ================= -->
+<section id="final">
+  <h2><span class="num">6</span>考前速记</h2>
+  <div class="chips">
+    <span class="chip">只有绝对压力才是状态参数</span>
+    <span class="chip">可逆 ＝ 准平衡 ＋ 无耗散</span>
+    <span class="chip">Δu = c<sub>V</sub>ΔT · Δh = c<sub>p</sub>ΔT 万能</span>
+    <span class="chip">c<sub>p</sub> − c<sub>V</sub> = R<sub>g</sub></span>
+    <span class="chip">熵变只看初终态</span>
+    <span class="chip">绝热 ≠ 定熵（可逆绝热才定熵）</span>
+    <span class="chip">五过程一张表</span>
+    <span class="chip">绝热线比定温线陡 · 定容线比定压线陡</span>
+    <span class="chip">n：0 定压 · 1 定温 · κ 定熵 · ∞ 定容</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  依据《石油工程热工学》2026 课件（0 绪论 · 1 基本概念 · 3 理想气体的性质与热力过程）整理 · 生成于 2026-10-06<br>
+  Markdown 源文件（思维导图大纲版 / 精简笔记版）见本仓库 · 仅供个人学习使用
+</footer>
+
+<script>
+document.querySelectorAll('.mm > li.branch > .node').forEach(function(n){
+  n.addEventListener('click', function(){ n.parentElement.classList.toggle('collapsed'); });
+});
+var bE = document.getElementById('btnExpand');
+var bC = document.getElementById('btnCollapse');
+if (bE) bE.addEventListener('click', function(){
+  document.querySelectorAll('li.collapsed').forEach(function(li){ li.classList.remove('collapsed'); });
+});
+if (bC) bC.addEventListener('click', function(){
+  document.querySelectorAll('.mm:not(.mm-root) > li.branch').forEach(function(li){ li.classList.add('collapsed'); });
+});
+</script>
+</body>
+</html>
