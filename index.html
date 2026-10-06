@@ -112,6 +112,16 @@ td.f{font-family:"Times New Roman",Georgia,serif;font-size:13.5px}
 .quiz .ans{margin-top:8px;font-size:13.5px;color:#334155}
 .quiz .verdict{font-weight:800}
 .quiz .yes{color:#15803d}.quiz .no{color:#b91c1c}
+/* ---------- 图表逐讲 ---------- */
+.fig{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;margin-bottom:16px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+.fig-head{font-weight:700;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fig-idx{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:22px;border-radius:6px;background:#1e3a8a;color:#fff;font-size:12px;padding:0 8px;flex:none}
+.fig img{width:100%;max-width:880px;display:block;border:1px solid #e2e8f0;border-radius:10px;margin:0 auto 10px}
+.fig p{font-size:13.5px;color:#334155;margin-bottom:6px}
+.fig p b{color:#0f172a}
+.fig .fig-key{background:#ecfdf5;border-left:3px solid #10b981;padding:6px 10px;border-radius:0 8px 8px 0;color:#065f46;margin-top:8px}
+.fig-photo{border-style:dashed;background:#f8fafc}
+.fig-photo p{margin-bottom:4px}
 /* ---------- 速记 ---------- */
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
@@ -142,6 +152,7 @@ footer a{color:#cbd5e1}
     <a href="#formulas">🧮 公式速查</a>
     <a href="#quiz">✅ 易错判断</a>
     <a href="#final">⚡ 考前速记</a>
+    <a href="#figures">🖼 课件图表逐讲</a>
   </div>
 </nav>
 
@@ -613,6 +624,345 @@ footer a{color:#cbd5e1}
     <span class="chip">五过程一张表</span>
     <span class="chip">绝热线比定温线陡 · 定容线比定压线陡</span>
     <span class="chip">n：0 定压 · 1 定温 · κ 定熵 · ∞ 定容</span>
+  </div>
+</section>
+
+<section id="figures">
+  <h2><span class="num">7</span>课件图表逐讲</h2>
+  <p class="sec-sub">按课件 PDF 页码顺序，对每一张原理图、坐标图、示意图与关键表格逐一解释（图片即课件原页截图，仅供个人学习）。每张图按「图上有什么 → 怎么读/怎么用 → 🎯 重点」展开；纯实拍照片页在每章末尾归组速览。</p>
+
+  <!-- ============ 第 0 章 ============ -->
+  <div class="ch-group">
+    <span class="ch-label ch0">第 0 章 绪论 · 图表</span>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-1</span>P9 火电厂能量转换全链条 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch0-p09.jpg" loading="lazy" alt="火电厂能量转换示意">
+      <p><b>图上有什么：</b>左侧蓝色文字给出能量形式变化链；右侧是火电厂卡通示意图：煤 → 锅炉（炉膛燃烧、烟囱）→ 550 ℃ 高温高压蒸汽 → 汽轮机 → 发电机 → 电；做功后的乏汽（30 ℃ 低压蒸汽）经冷凝器被冷却水带走热量，冷却塔排放，给水泵再把水送回锅炉。</p>
+      <p><b>怎么读：</b>顺着箭头把每一步的能量形式标出来：煤燃烧（化学能）→ 烟气（热能）→ 水/水蒸气（热能）→ 汽轮机（机械能）→ 发电机（电能）。水蒸气是携带热能的"工质"，在锅炉吸热、汽轮机膨胀做功、冷凝器排热。</p>
+      <p class="fig-key">🎯 重点：这就是"热机"的完整原型——工质吸热 → 膨胀做功 → 排热，正是第一章热机三步曲的来源；550 ℃ 进汽轮机、30 ℃ 排汽也直观说明能量不但有"数量"还有"品质"（为热力学第二定律埋伏笔）。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-2</span>P11 石油工业上/下游的能量场景</div>
+      <img src="images/ch0-p11.jpg" loading="lazy" alt="石油工程中的能量">
+      <p><b>图上有什么：</b>左侧"上游"两张照片（海上钻井平台俯瞰、抽油机），绿色箭头指向右侧"下游"（炼化厂全景：裂解炉、CCU 碳捕集利用、分子转化示意）。</p>
+      <p><b>怎么读：</b>石油产业链上游解决"把油采出来"，下游解决"把油炼成产品并处理碳"——两个环节都布满热工问题（注汽/举升/井筒温度场；加热炉/裂解/余热回收）。</p>
+      <p class="fig-key">🎯 重点：本课程叫"石油工程热工学"的落点：热工知识贯穿上下游，后面的应用题、思考题多以此为背景。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-3</span>P15 热能的直接利用与转化利用 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch0-p15.jpg" loading="lazy" alt="热能利用两条路径">
+      <p><b>图上有什么：</b>上半部分：左为烹饪锅（直接加热食物），右为稠油热采地层剖面示意——注汽井注入蒸汽，在油层形成蒸汽腔，原油被加热降粘后随热油水被驱替到采油井（井口抽油机采出），配原油流量公式 Q = AKΔp/(μ<sub>o</sub>L)；下半部分：蒸汽机车、电站冷却塔、斯特林发动机剖视图（热能转化为机械能的实例）。</p>
+      <p><b>怎么读：</b>热能的载体是流体，利用只有两条路：① 直接利用——把对象加热（稠油热采是石油行业最典型场景）；② 转化利用——热→机械能。</p>
+      <p class="fig-key">🎯 重点：看清公式里的因果链：蒸汽加热 → 温度↑ → 原油粘度 μ<sub>o</sub>↓ → 产量 Q↑。这一张图就说明了"热能直接利用"在油田的价值，也是"石油"二字最直接的落点。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-4</span>P16 其他形式能源的转化：核电站装置示意图</div>
+      <img src="images/ch0-p16.jpg" loading="lazy" alt="核电站发电装置与多种能源">
+      <p><b>图上有什么：</b>上排：钻木取火（人类最早的能源利用）、风力发电、微波/激光武器（辐射能）；左下：核电站发电装置示意——核反应堆（压力容器+控制棒）产生热量 → 汽轮机 → 发电机 → 冷凝器 → 冷却器（河水/海水/冷却塔）；右下：多种形式能源汇总（太阳能、风、地热/干热岩、工业余热、空气能、氢能储运等）。</p>
+      <p><b>怎么读：</b>核电站与火电厂的装置结构完全同构——都是"热源 → 蒸汽 → 汽轮机 → 冷凝"，区别只在热源是核燃料还是煤。</p>
+      <p class="fig-key">🎯 重点：记住"能源不同、热力循环同构"；冷凝器/冷却器的设计就是传热学篇的任务（强化传热）。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-5</span>P18 水的"驱动做功效应"数据对比 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch0-p18.jpg" loading="lazy" alt="水汽化膨胀数据表">
+      <p><b>图上有什么：</b>高压锅卡通 + 水蒸气照片 + 一张对比表：常压下 H₂O 全液态 1 m³ → 全气态 1675 m³；113 大气压下 H₂O 全液态 1 m³ → 全气态 15.16 m³。</p>
+      <p><b>怎么读：</b>同样 1 m³ 液态水，汽化后体积分别膨胀约 1675 倍和 15 倍——压力越高膨胀倍数越小，但膨胀量依然可观，足以推动活塞做功。</p>
+      <p class="fig-key">🎯 重点："热力效应"的量化版：热能→机械能靠工质受热膨胀；这也回答了"为什么工质要选气态"——膨胀性和流动性最好。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-6</span>P19 工程热力学的研究对象框图</div>
+      <img src="images/ch0-p19.jpg" loading="lazy" alt="工程热力学研究对象">
+      <p><b>图上有什么：</b>顶部定义：工程热力学是研究<b>工质的性质</b>和<b>热能与机械能转换规律</b>的一门学科；下方蓝色框图把学科拆成"能量转换规律 + 工质的性质"两大板块；配电厂、化工厂、航空发动机剖视、汽车发动机、水泵等照片。</p>
+      <p><b>怎么读：</b>两大板块对应课程两条暗线：第一章（基本概念）与第三章（理想气体）讲"工质的性质"，第二章以后（热一律、热二律、循环）讲"能量转换规律"。</p>
+      <p class="fig-key">🎯 重点：复习时可用这张图自查：两块内容是否都能独立讲清楚？</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-7</span>P21 页岩孔隙中 CO₂ 置换 CH₄ 分子示意图 <span class="tag b-star">⭐ 石油特色</span></div>
+      <img src="images/ch0-p21.jpg" loading="lazy" alt="CO2置换CH4分子示意图">
+      <p><b>图上有什么：</b>上排两幅：岩石（有机质）孔隙中，"置换前"孔壁吸附橙色分子（CH₄）、孔隙内是紫色游离 CH₄；"置换后"注入的黄色分子（CO₂）占据吸附位，把 CH₄ 顶成游离态。下排三幅：随温度升高，岩石表面上水/油的附着形态逐步变化（吸附能与脱附能随温度变化）。</p>
+      <p><b>怎么读：</b>分子间作用力产生吸附能；CO₂ 与甲烷竞争吸附位时更占优势，于是"注 CO₂ 换 CH₄"在分子层面成立。</p>
+      <p class="fig-key">🎯 重点：热力学不只研究"大机器"——分子尺度的吸附/脱附、置换效应同样是能量问题；这是注 CO₂ 开发非常规气的理论基础，也说明热力学与流体力学、界面物理密切相关。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-8</span>P25 能量转换规律总框图（热一律/热二律预告） <span class="tag b-star">⭐⭐ 重点图</span></div>
+      <img src="images/ch0-p25.jpg" loading="lazy" alt="能量转换规律框图">
+      <p><b>图上有什么：</b>左侧竖排"能量转换规律"，分两支：<b>第一定律——守恒性</b>：E₁ → ΔE → E₂，推论"第一类永动机不可能实现"（对应 Mayer、Helmholtz、Joule）；<b>第二定律</b>分两点——方向性：热量 Q 自发从 T<sub>高</sub>流向 T<sub>低</sub>，反向（制冷）必须"代劳"消耗功 W；品质性：热量 Q₁ 只能一部分变机械能 W，其余 Q₂ 排给低温热源，推论"第二类永动机不可能实现"（对应 Carnot、Clausius、Kelvin）。</p>
+      <p><b>怎么读：</b>一张图概括热力学两大定律的灵魂：量的守恒 + 过程的方向与品质。方向性小图里"自发/代劳"两个箭头就是全部精髓。</p>
+      <p class="fig-key">🎯 重点：先把两条"不可能实现"背下来——判断题高频；等学到第四章（热二律）再回头细看，这张图就是那一章的目录。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-9</span>P29 注蒸汽热采系统与三张传热示意 <span class="tag b-star">⭐ 石油特色</span></div>
+      <img src="images/ch0-p29.jpg" loading="lazy" alt="注蒸汽热采系统与传热示意">
+      <p><b>图上有什么：</b>中央大图"注蒸汽热采系统"：锅炉 → 干线/支线 → 注汽井 → 油层内蒸汽腔（黄色）驱替原油 → 抽油机采出；周围三张小图分别放大三处传热环节：左上"地面注蒸汽管线"（保温层包着蒸汽管）、右"注汽油管井筒"径向多层结构（蒸汽 → 隔热层 → 环空 → 地层 → 水泥环）、左下"油层顶底传热"（蒸汽带向顶、底岩层散热）。</p>
+      <p><b>怎么读：</b>蒸汽从锅炉到油层要走"地面管线 → 井筒 → 油层"三段，每一段都向环境散失热量——每一段都对应一张径向传热模型图。</p>
+      <p class="fig-key">🎯 重点：课件原文"注蒸汽管路和油层顶底的热损失计算"就落在这一张图上；传热学篇的导热（隔热层/水泥环/岩层）、对流换热（环空流体）、辐射（高温表面）最终都能归结到它——是连接两篇课程的枢纽图。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 0-10</span>P31 井筒温度场与举升工艺设计</div>
+      <img src="images/ch0-p31.jpg" loading="lazy" alt="井筒温度场与举升工艺">
+      <p><b>图上有什么：</b>左侧抽油机井筒结构示意（从井口到油层），配原油在地面流动的实拍照片；课件红字强调：温度<b>主要通过影响原油物性</b>而影响其流动规律，许多举升工艺的设计计算都离不开<b>井筒内温度场</b>的计算。</p>
+      <p class="fig-key">🎯 重点：原油粘度对温度极其敏感 → 井筒里每升高/降低 1 ℃ 都会改变流动规律 → 井筒温度场计算是举升设计（杆式泵、螺杆泵、电潜泵等）的前置步骤。这是"为什么要学传热学"在采油方向的答案。</p>
+    </div>
+
+    <div class="fig fig-photo">
+      <div class="fig-head"><span class="fig-idx">速览</span>绪论其余图片页（无原理图，一句话带过）</div>
+      <p><b>P2–3</b> 代尔夫特理工大学与巴西交流照片（课程国际合作背景）。</p>
+      <p><b>P6–8、10</b> 生产生活中机械能/热能实例照片（跑车、舰船、火箭、炉灶、暖气片测温等）——对应"能量形式"的直观素材。</p>
+      <p><b>P12</b> 六种能量形式配图（机械/热/电/化学/核/辐射）——与笔记中能量分类一一对应。</p>
+      <p><b>P13</b> 地球气温划分等级表 + 冷热感觉漫画——说明"热不是人的感觉"，温度才是分子运动剧烈程度的量度。</p>
+      <p><b>P14</b> 能源照片组（煤炭/石油/天然气/油页岩/地热）——热能来源：矿物燃料间接获取、地热直接获取。</p>
+      <p><b>P20</b> 蒸汽轮机/燃气轮机/空调压制冷三种装置示意——热力学能"正向"变功、也能"逆向"制冷（空调把机械能转回热力学能）。</p>
+      <p><b>P22–24</b> 燃素说→热质说→热运动学说发展史、大事年表、诺贝尔奖得主照片——热的本质认识史；焦耳热功当量实验确立"热是能量的一种形式"。</p>
+      <p><b>P26–28</b> 传热学应用照片（散热/保温、航天器 -157~55 ℃ 与重返大气 1650 ℃、芯片冷却、肿瘤热疗等）——传热无处不在。</p>
+      <p><b>P30</b> 深井/超深井数据：4000–5000 m 井深，井口与井底温差可达 <b>150–180 ℃</b>（地温梯度约 2.5 ℃/100 m），大温差对钻井液、固井水泥浆、钻具均有影响——井筒温度场重要性的数据支撑。</p>
+      <p><b>P32–33</b> 思考题照片（美国黄石老忠实间歇泉四阶段喷发、家居热现象八连问）——用生活现象练"热力学+传热学"直觉。</p>
+    </div>
+  </div>
+
+  <!-- ============ 第 1 章 ============ -->
+  <div class="ch-group">
+    <span class="ch-label ch1">第 1 章 基本概念 · 图表</span>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-1</span>P6 系统—边界—外界定义图</div>
+      <img src="images/ch1-p06.jpg" loading="lazy" alt="热力系统与边界">
+      <p><b>图上有什么：</b>左图：气缸 + 活塞，边界 = 缸壁与活塞面（真实存在、可以移动）；右图：真空气缸经阀门连着一个气球状虚线区域——边界是<b>假想、可变形</b>的。</p>
+      <p><b>怎么读：</b>系统=选定的研究对象（一定工质或空间），边界是系统与外界的分界面，边界之外与系统发生质/能交换的是外界。</p>
+      <p class="fig-key">🎯 重点：边界三连问——真实还是假想？固定还是可动？固定质量还是固定容积？这决定了系统分类（下一张图）。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-2</span>P7 同一装置、不同目的 → 不同系统 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p07.jpg" loading="lazy" alt="系统选取示例">
+      <p><b>图上有什么：</b>左：研究发动机效率——虚线边界包住整台柴油机，穿越边界的有进气、排气、驱动轴（还有缸套冷却水）；中：同一台发动机简化成开口方框模型（空气进、燃油进、驱动轴、排气出）；右：研究汽油燃烧过程——边界只圈住气缸内的气体；下排：刚性固定边界（缸头侧）与刚性可移动边界（活塞）的对比，以及烟囱烟羽照片（随流体划定的假想边界）。</p>
+      <p><b>怎么读：</b>系统选取有<b>目的性</b>：研究整机效率就把整机当系统（开口系），研究缸内燃烧就只圈缸内工质（闭口系）。</p>
+      <p class="fig-key">🎯 重点：这是"如何划系统"的方法论图；作业题 1-1 第 3 问"列举石油工程中的开口/闭口系统案例"就考这个思路（井筒流动段=开口系，岩心定容腔=闭口系）。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-3</span>P8 闭口系统模型 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p08.jpg" loading="lazy" alt="闭口系统">
+      <p><b>图上有什么：</b>右上主图：黄色"闭口系统"+绿色"边界"+外界；下方两个模型：高压锅模型（m = 常数，标注"质量交换：无；能量交换：可"）、定压加热模型（气体 2 kg、1 m³ → 气体 2 kg、3 m³，边界由"移动边界+固定边界"组成）。</p>
+      <p><b>怎么读：</b>闭口系 = 与外界<b>无物质交换</b>的系统，又称<b>控制质量系</b>：质量恒定，但功和热可以穿过边界；体积完全可以变（1 m³ → 3 m³）。</p>
+      <p class="fig-key">🎯 重点：记住八个字"质量交换无、能量交换可"；⚠️ 高压锅模型直接证伪"闭口系体积不能变"这一常见错判。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-4</span>P9 开口系统模型 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p09.jpg" loading="lazy" alt="开口系统">
+      <p><b>图上有什么：</b>右上主图：压气机剖视（黄色气流从进口进、出口出，叶轮转动）；下方三个模型：教学楼烧水炉（水加热器=控制体积，冷水进口、热水出口）、缓冲储气罐（控制体积，标注"质量交换：有；能量交换：可"）、输汽管路（锅炉 → 干线 → 管段 1-2，沿途热损失 q<sub>loss</sub>）。</p>
+      <p><b>怎么读：</b>开口系 = 与外界<b>有物质交换</b>的系统，又称<b>控制容积系</b>：容积恒定、物质进出、伴随能量交换。</p>
+      <p class="fig-key">🎯 重点：工程上绝大多数连续运行的设备（压气机、泵、换热器、井筒）都按开口系分析——第二章的稳定流动能量方程就是为它准备的。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-5</span>P17 压力测量：表压、真空度与绝对压力 <span class="tag b-star">⭐⭐ 全章最重要</span></div>
+      <img src="images/ch1-p17.jpg" loading="lazy" alt="压力测量">
+      <p><b>图上有什么：</b>左：弹簧管压力计结构（中空弹性金属管、指针、齿轮、连接件，感受气体压力 p）；右上：以零为基准的线段图——当 p &gt; p<sub>b</sub> 时 p − p<sub>b</sub> = p<sub>e</sub>（表压），当 p &lt; p<sub>b</sub> 时 p<sub>v</sub> = p<sub>b</sub> − p（真空度）；右下：两支 U 形管分别测量真空度 p<sub>v</sub> 与表压 p<sub>e</sub>；黄色公式框：p = p<sub>e</sub> + p<sub>b</sub>（当 p &gt; p<sub>b</sub>）；p = p<sub>b</sub> − p<sub>v</sub>（当 p &lt; p<sub>b</sub>）。</p>
+      <p><b>怎么读：</b>压力表测到的永远是"与大气压的差"：线段图把 p、p<sub>b</sub>、p<sub>e</sub>、p<sub>v</sub> 四者的加减关系画成一目了然的长度关系。</p>
+      <p class="fig-key">🎯 重点：课件红字"只有绝对压力 p 才是状态参数"。所有热力计算必须先用 p = p<sub>b</sub> + p<sub>e</sub>（或 p = p<sub>b</sub> − p<sub>v</sub>）换算成绝对压力；作业题 1-1 第 2 问即考此图。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-6</span>P19 热力学第零定律 A–B–C 示意 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p19.jpg" loading="lazy" alt="热力学第零定律">
+      <p><b>图上有什么：</b>黄框中 A、B 两物体并排坐在物体 C 上——A 与 C、B 与 C 分别热平衡，则 A、B 彼此热平衡；下方双箭头：温度相等 ⇔ 热平衡。</p>
+      <p><b>怎么读：</b>第零定律保证"温度"作为状态参数存在；温度计就是图中的 C——不用把 A、B 直接接触，用 C 比较即可。</p>
+      <p class="fig-key">🎯 重点：一句话考点："热力学第零定律是温度测量的理论依据。"</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-7</span>P27 平衡 vs 稳定 vs 均匀：两组反例图 <span class="tag b-star">⭐ 难点图</span></div>
+      <img src="images/ch1-p27.jpg" loading="lazy" alt="平衡与稳定、平衡与均匀">
+      <p><b>图上有什么：</b>上排：火焰加热金属杆一端（红热）、风扇冷却另一端——杆上温度呈红→蓝的稳定分布：这是<b>稳定态</b>（各点温度不随时间变）但存在温差，是持续的不平衡。下排：左容器"湿空气（水蒸气）+ 液态水"两相共存，标注"T、p 平衡但不均匀"；右容器为全部水蒸气（均匀单相）。</p>
+      <p><b>怎么读：</b>两个反例分别对应两条结论：① 稳定不一定平衡，但平衡一定稳定（稳定态可携带稳定的不平衡势差，如稳态导热）；② 均匀不是平衡的必要条件（两相共存也是平衡态），单相平衡系才通常均匀。</p>
+      <p class="fig-key">🎯 重点：作业题 1-1 第 1 问的标准答案素材；判断题"稳定即平衡"“均匀即平衡"都拿这两张小图反驳。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-8</span>P33 状态参数坐标图：一点 = 一个平衡态 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p33.jpg" loading="lazy" alt="p-v状态坐标图">
+      <p><b>图上有什么：</b>p-v 图上两个点：点 1（p₁, v₁）、点 2（p₂, v₂），各自用虚线向坐标轴投影读数。</p>
+      <p><b>怎么读：</b>以两个独立状态参数（如 p、v）为坐标，<b>每一个点代表一个平衡状态</b>——因为简单可压缩系只需两个独立参数即可锁定状态（状态公理 N = n+1 = 2）。</p>
+      <p class="fig-key">🎯 重点：反过来说：非平衡状态没有确定的参数值，画不成点。这句话是"为什么只研究平衡态"的图解答案。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-9</span>P35 实际过程 I→II 与理想过程 I→III <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p35.jpg" loading="lazy" alt="热力过程与准平衡">
+      <p><b>图上有什么：</b>右上：气缸内活塞被快速释放（失衡瞬间）；中下：一系列气缸——把压在活塞上的重物（砝码）<b>逐个</b>取下，系统依次经过中间态 (p″₂, T″₂) 缓慢到达终态 III；右侧 p-v 图：点 1（p₁=p₀+G, T₁=T₀）沿虚线准平衡路径到达点 2（p₂=p₀, T₂=T₀）。</p>
+      <p><b>怎么读：</b>一次取下全部砝码 = 实际过程 I→II（中间态失衡、无确定参数、画不到图上）；逐个取砝码 = 准平衡（理想）过程 I→III（每个瞬间都近似平衡，可画出过程线）。</p>
+      <p class="fig-key">🎯 重点：准平衡的条件（不平衡势无限小、过程足够慢、弛豫时间短）全部对应图中"逐个取砝码"的操作；下一张图（P36）进一步说明：气体工质因弛豫时间极短，很容易满足准平衡条件。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-10</span>P37 可逆过程：活塞-飞轮与真空抽隔板 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p37.jpg" loading="lazy" alt="可逆过程">
+      <p><b>图上有什么：</b>右上：气缸-活塞通过连杆驱动飞轮（假设刚性绝热、活塞与腔壁无摩擦）——正、逆两过程后系统与外界均完全复原，p-v 图上 1→3→4→…→2 是一条连续曲线；左下：左半有 p 气体、右半真空的容器——一次抽去隔板（气体冲入真空）与逐个抽去隔板（近似准平衡）两种方案对比。</p>
+      <p><b>怎么读：</b>无摩擦的准平衡过程可以沿原路逆行且不给外界留痕迹 → 可逆。自由膨胀（一次抽隔板）即使无摩擦也收不回：气体不会自动缩回左半边 → 不可逆的典型。</p>
+      <p class="fig-key">🎯 重点：可逆 = 准平衡 + 无耗散效应；实际过程都不可逆（传热、混合、扩散、燃烧……），先按可逆算出上限再修正。判断题"不可逆=回不到初态"的错误点：是可以回到初态，但<b>外界</b>留了变化。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-11</span>P42 膨胀功推导图 <span class="tag b-star">⭐⭐ 重点图</span></div>
+      <img src="images/ch1-p42.jpg" loading="lazy" alt="膨胀功推导">
+      <p><b>图上有什么：</b>推导链：δW = Fdx = pA·dx = pdV → W = ∫₁²pdV；比膨胀功 δw = pdv，w = ∫₁²pdv；右侧 p-v 图：过程线 1→2 下取微元竖条，标注 δW = pdV（阴影），对应下方气缸-活塞受力（F = pA，位移 dx）；左上高压锅卡通提示"增量 Δx 与微量 dx/δx 的区别"。</p>
+      <p><b>怎么读：</b>从力学位移定义出发（力 × 位移），把 p·A 换成压力、dx·A 换成 dV，就得到热力学的体积功公式；每一微元条 = 当前压力 × 当前体积增量。</p>
+      <p class="fig-key">🎯 重点："p-v 图上过程线下面积 = 膨胀功"从这张图来；微元功记 δW 不记 dW（过程量、非全微分）。课件红字：面积表明了功量大小，"这正是状态坐标图的特殊作用"。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-12</span>P43 压缩功与示功图 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch1-p43.jpg" loading="lazy" alt="压缩功与示功图">
+      <p><b>图上有什么：</b>上：压缩过程的 p-v 图（沿过程线 2→1，微元 δW′ = pdv′，dv′ 为负 → w′ 为负）+ 气缸受力示意；下：示功图——初终态 1、2 之间画两条不同路径 a、b，曲线下面积明显不同。</p>
+      <p><b>怎么读：</b>符号约定在此定死：系统对外做功为"＋"（膨胀、向外），外界对系统做功为"−"（压缩、向内）。</p>
+      <p class="fig-key">🎯 重点：示功图（p-v 图）是发动机/压气机测试的真实工具，曲线包围面积=单循环功；这张图同时为下一张"功是过程量"做铺垫。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-13</span>P44 功是过程量：同初终态、不同路径、功不同 <span class="tag b-star">⭐⭐ 易错图</span></div>
+      <img src="images/ch1-p44.jpg" loading="lazy" alt="功是过程量">
+      <p><b>图上有什么：</b>左：两个气缸——一个装气体、一个装液体，曲柄转向不同（a↑b↓），同样压缩 dx 但路径不同；右：活塞-飞轮机构 + p-v 图上 1→a→2 与 1→b→2 两条路径，曲线下阴影面积不同。</p>
+      <p><b>怎么读：</b>功 = 过程线下面积，而面积与<b>积分路线</b>有关 → 初终态相同、路径不同，功就不同。</p>
+      <p class="fig-key">🎯 重点：课件红字"功是过程量而不是状态量"；因此微元功不是全微分，必须写 δw。⚠️"某状态含有多少功/热"是病句——功和热是<b>过程中通过边界传递</b>的能量。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 1-14</span>P47 示热图：T-s 图（温熵图） <span class="tag b-star">⭐⭐ 重点图</span></div>
+      <img src="images/ch1-p47.jpg" loading="lazy" alt="示热图T-s">
+      <p><b>图上有什么：</b>右侧 T-s 图：过程线 1→2，微元竖条标注 δq = Tds（阴影），q = ∫₁²Tds，熵从 s₁ 增到 s₂；左侧判据：ds &gt; 0 ⇒ δq &gt; 0 系统吸热；ds &lt; 0 ⇒ δq &lt; 0 系统放热；ds = 0 ⇒ δq = 0 系统绝热（定熵过程 isentropic）。</p>
+      <p><b>怎么读：</b>由熵的定义 δs = δq/T（可逆）反写出 δq = Tds——于是 T-s 图与 p-v 图完全对称：T↔p（都是"势"）、s↔v（都是"坐标"）、q↔w（都是过程量）。</p>
+      <p class="fig-key">🎯 重点：课件红字"根据熵的变化判断热量交换方向"——这是第三章画 T-s 图判断吸放热的依据；配套 P48：对质量 m 的工质 δQ = TdS、Q = ∫TdS。有了这张图，"熵"从抽象定义变成可视面积。</p>
+    </div>
+
+    <div class="fig fig-photo">
+      <div class="fig-head"><span class="fig-idx">速览</span>第 1 章其余图片页</div>
+      <p><b>P3</b> 工质三态分子示意（固态-冰 / 液态-水 / 气态-蒸汽）——气态的膨胀性、流动性最好，故工质首选气态。</p>
+      <p><b>P4</b> 三类热机结构图：蒸汽轮机（瓦特）、四冲程内燃机、燃气轮机——共同特点：工质吸热 → 膨胀做功 → 排热。</p>
+      <p><b>P5</b> 热源示意：核电站发电装置与制冷/制热空调装置——热源=热容量极大、吸放热时自身温度不变（锅炉、大气、循环水池）；供热的叫高温热源，吸热的叫低温热源。</p>
+      <p><b>P10</b> 绝热系（保温瓶 cartoon）与孤立系（"整体孤立"）示意——绝热=无热量交换；孤立=既无能量又无物质交换。</p>
+      <p><b>P15、P24</b> 比参数 v = V/m、u = U/m 的气缸示意与比体积/密度卡通（v·ρ = 1）——比参数用小写、与尺度无关。</p>
+      <p><b>P20、P23</b> 温标三要素图（水银温度计在冰水混合物/沸水中定标）与测温仪表照片（接触式：水银/热电偶/电阻；非接触式：辐射高温计/CARS）。</p>
+      <p><b>P25–26、P28–30</b> 非平衡势差卡通、四平衡文字框、状态公理"独立参数 N = n+1"图、简单可压缩系气缸图——文字为主，公式与结论见笔记 1.2/1.3 节。</p>
+      <p><b>P36</b> 准平衡条件补充图——不平衡势小 + 过程足够慢 + 弛豫时间短；气体工质弛豫时间极短，天然容易满足准平衡。</p>
+      <p><b>P39</b> 尺度/计量简化照片（钢丝绳、非织造布、绳团、卷尺）——纵横比差异大可简化成一维等"误差相容"思想。</p>
+      <p><b>P49–50</b> 作业题 1-1（五道概念判断）与作业题 1-2（储气罐恒温给气球充气，求 0.3/0.182/0.15 MPa 三种压力下气体做功）——本题正是"体积功 W = ∫pdV"的应用。</p>
+    </div>
+  </div>
+
+  <!-- ============ 第 3 章 ============ -->
+  <div class="ch-group">
+    <span class="ch-label ch3">第 3 章 理想气体 · 图表</span>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-1</span>P11 迈耶公式推导与定值摩尔热容表 <span class="tag b-star">⭐⭐ 重点图</span></div>
+      <img src="images/ch3-p11.jpg" loading="lazy" alt="迈耶公式与定值摩尔热容">
+      <p><b>图上有什么：</b>上：迈耶公式完整推导：c<sub>p</sub> = dh/dT = d(u+pv)/dT = c<sub>V</sub> + R<sub>g</sub>（关键是 h = u + pv = u + R<sub>g</sub>T），摩尔形式 C<sub>p,m</sub> − C<sub>V,m</sub> = R；比热比 γ = c<sub>p</sub>/c<sub>V</sub>，从而 c<sub>p</sub> = γR<sub>g</sub>/(γ−1)、c<sub>V</sub> = R<sub>g</sub>/(γ−1)。下：定值摩尔热容表——单原子（3R/2、5R/2、γ=1.67）、双原子（5R/2、7R/2、γ=1.40）、多原子（7R/2、9R/2、γ≈1.29）。</p>
+      <p><b>怎么读：</b>推导的物理内核：同样升温 1 K，定压过程多吸的热恰好用于对外做体积功（pv 的增量）。表格按"原子数"取值：能量均分定理——自由度越多热容越大。</p>
+      <p class="fig-key">🎯 重点：三个 γ 值是常考记忆点（空气≈1.4）；适用性注记：单原子大范围准确、双原子 0–200 ℃ 内接近、多原子偏差较大。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-2</span>P12 真实比热容与平均比热容 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch3-p12.jpg" loading="lazy" alt="真实比热容与平均比热容">
+      <p><b>图上有什么：</b>上：真实比热容多项式 c<sub>p</sub> = a₀ + a₁T + a₂T² + a₃T³（T 用热力学温度 K，a 为实验经验常数）——因为 u、h 只是 T 的函数，真实比热容也是温度的单值函数。下：c-t 曲线图：曲边梯形面积 = 热量 q₁₋₂，用同底等面积的矩形高定义<b>平均比热容</b> c̄|₍t₁→t₂₎ = q₁₋₂/(t₂−t₁)，并给出换算式 c̄|₍t₁→t₂₎ = (c̄|₀ᵗ²·t₂ − c̄|₀ᵗ¹·t₁)/(t₂−t₁)；附几种气体的平均定压质量比热容表（O₂/N₂/H₂/CO/空气/CO₂/H₂O，0~1000 ℃）。</p>
+      <p><b>怎么读：</b>温度越高比热容越大（曲线越陡）→ 精确计算不能再用定值；工程上直接查"0 ℃~t 平均比热容表"，两个平均比热容一加权就得到任意温度区间的平均值。</p>
+      <p class="fig-key">🎯 重点：比热容的三级精度体系：定值（估算）→ 多项式（程序计算）→ 平均比热容表（手算精确值）；例题中用哪种取决于题目给的系数。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-3</span>P16 道尔顿分压定律与分体积定律示意 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch3-p16.jpg" loading="lazy" alt="道尔顿定律与分体积定律">
+      <p><b>图上有什么：</b>上：分压力与道尔顿定律——左侧一个混合气体容器（n, V, T, 压力计读 p），拆成右侧 k 个容器：组元 i 单独占据总体积 V、处于同温 T，压力计分别读 p₁…p<sub>k</sub>，且 p = p₁+p₂+…+p<sub>k</sub> = Σp<sub>i</sub>（标注"仅适用理想气体"）。下：分体积与分体积定律（Amagat）——混合气体（V）拆成各组元在<b>同温同压</b>下单独占据的 V₁…V<sub>k</sub>，V = ΣV<sub>i</sub>。</p>
+      <p><b>怎么读：</b>分压力 = "组元 i 单独占 V、处于 T"时的压力；分体积 = "组元 i 单独处于 p、T"时的体积。定义的前提条件（单独占据什么、同什么温压）是概念题挖坑点。</p>
+      <p class="fig-key">🎯 重点：两个定律都只对理想气体成立（分子互不干扰才可叠加）；由此立即得到体积分数 = 摩尔分数（φ<sub>i</sub> = x<sub>i</sub>）。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-4</span>P22 定容过程：p-v 图与 T-s 图 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch3-p22.jpg" loading="lazy" alt="定容过程T-s图">
+      <p><b>图上有什么：</b>右上：p-v 图上定容线是垂直线段 2′-1-2；右下：T-s 图上定容线是指数曲线 T = T₀e^((s−s₀)/c<sub>V</sub>)，斜率 (∂T/∂s)<sub>V</sub> = T/c<sub>V</sub>，s₂−s₁ = c<sub>V</sub>ln(T₂/T₁)。下半页：功量热量——w = ∫pdv = 0；技术功 w<sub>t</sub> = −∫vdp = v(p₁−p₂)；q = Δu + w = Δu；小图：刚性容器加热后分子运动加速、表压上升。</p>
+      <p><b>怎么读：</b>定容 ⇒ dv = 0 ⇒ 膨胀功为零 ⇒ 吸热全部变成内能（分子动能↑ → 温度、压力同升）。</p>
+      <p class="fig-key">🎯 重点：⚠️ T-s 图上的定容线是<b>指数曲线</b>不是直线，斜率 T/c<sub>V</sub> 恒正；q = c<sub>V</sub>ΔT 虽在定容过程导出，但对理想气体<b>任何过程</b>的 Δu 都成立。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-5</span>P23 定压过程 + 与定容线的陡缓对比 <span class="tag b-star">⭐⭐ 重点图</span></div>
+      <img src="images/ch3-p23.jpg" loading="lazy" alt="定压过程T-s图">
+      <p><b>图上有什么：</b>上：气缸-活塞定压加热（q 进入、w 输出、活塞右移 1→2）；p-v 图上定压线是平行于 v 轴的水平线（2′-1-2），v₂/v₁ = T₂/T₁。下：T-s 图上定压线也是指数曲线 T = T₀e^((s−s₀)/c<sub>p</sub>)，斜率 (∂T/∂s)<sub>p</sub> = T/c<sub>p</sub>；对比框：γ = c<sub>p</sub>/c<sub>V</sub> &gt; 1 ⟹ (∂T/∂s)<sub>p</sub> &lt; (∂T/∂s)<sub>V</sub>，小图中过同一点的"定容过程线"明显比"定压过程线"更陡。</p>
+      <p><b>怎么读：</b>同样升高 1 K，定压要多吸热（多出的热去对外做功）→ 熵增更大 → 同样 ΔT 下定压线横向"走得更远"，看起来更平缓。</p>
+      <p class="fig-key">🎯 重点：T-s 图定性题必背结论：<b>定容线陡、定压线缓</b>（过同一点）；定压过程 q = Δh = c<sub>p</sub>ΔT、w = pΔv = R<sub>g</sub>ΔT、w<sub>t</sub> = 0。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-6</span>P25 定温过程：等边双曲线与水平线 <span class="tag b-star">⭐ 重点图</span></div>
+      <img src="images/ch3-p25.jpg" loading="lazy" alt="定温过程p-v与T-s">
+      <p><b>图上有什么：</b>右上：p-v 图上定温线为<b>等边双曲线</b>（pv = 常数，2′-1-2）；右下：T-s 图上定温线为水平线（2′-1-2）；q = ∫Tds = T(s₂−s₁)——课件注明：此式对实际气体或液体的可逆定温过程同样适用。下半页：w = ∫R<sub>g</sub>T·dv/v = R<sub>g</sub>T·ln(v₂/v₁) = R<sub>g</sub>T·ln(p₁/p₂)；w<sub>t</sub> = −∫vdp = w；Δu = Δh = 0 ⟹ q = w = w<sub>t</sub>。</p>
+      <p><b>怎么读：</b>T 不变 ⇒ u、h 不变 ⇒ 吸热全部对外做功（最"纯粹"的热变功过程）。</p>
+      <p class="fig-key">🎯 重点：p-v 图上双曲线与后面绝热线的陡缓对比是必考点；q = TΔs 不限理想气体（任何工质的可逆定温都行），但 w = R<sub>g</sub>T·ln(v₂/v₁) 只限理想气体。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-7</span>P27 绝热（定熵）过程：绝热线比定温线陡 <span class="tag b-star">⭐⭐ 重点图</span></div>
+      <img src="images/ch3-p27.jpg" loading="lazy" alt="绝热过程p-v与T-s">
+      <p><b>图上有什么：</b>上：可逆绝热 dq = 0 ⟹ ds = 0 ⟹ s₁ = s₂（可逆绝热=定熵）；p-v 图：过同一点 1 的<b>绝热线</b>与<b>定温线</b>——绝热线更陡（膨胀到同样比容，绝热降压更快，终点 2 低于定温终点 2′）；斜率比较 |(∂p/∂v)<sub>s</sub>| = κp/v &gt; |(∂p/∂v)<sub>T</sub>| = p/v；T-s 图：垂直线段 2-1-2′。下：w = q − Δu = −Δu = u₁ − u₂（绿色标注：<b>也适用于任何工质的可逆或不可逆过程</b>）；定比热理想气体：w = c<sub>V</sub>(T₁−T₂) = R<sub>g</sub>(T₁−T₂)/(κ−1) = (p₁v₁−p₂v₂)/(κ−1)，w<sub>t</sub> = κw。</p>
+      <p><b>怎么读：</b>绝热膨胀不吸热，做功全靠消耗内能 → 温度、压力一起掉得比定温更快 → 线更陡。</p>
+      <p class="fig-key">🎯 重点：两件事必背：① |绝热线斜率| &gt; |定温线斜率|（因为 κ &gt; 1）；② w = −Δu 适用范围最广（第一定律，不需要可逆），而含 κ 的公式只限"定比热 + 可逆"。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-8</span>P29 多变过程：过同一点的 n 线族与多变热容 <span class="tag b-star">⭐ 难点图</span></div>
+      <img src="images/ch3-p29.jpg" loading="lazy" alt="多变过程p-v图">
+      <p><b>图上有什么：</b>上：把绝热关系式中的 κ 换成 n，即得多变过程的参数关系（p₂/p₁ = (v₁/v₂)ⁿ 等）；p-v 图上过同一点画 n = 0（水平线）、n = 1（双曲线）、n = κ、n = ±∞（垂直线）四条基准线，曲线斜率 dp/dv = −n·p/v。下：热量与比热容：q = Δu + w = c<sub>V</sub>(T₂−T₁) + R<sub>g</sub>(T₁−T₂)/(n−1) = [(n−κ)/(n−1)]·c<sub>V</sub>·(T₂−T₁) = c<sub>n</sub>(T₂−T₁)，其中 c<sub>n</sub> = (n−κ)/(n−1)·c<sub>V</sub> 称为<b>多变热容</b>。</p>
+      <p><b>怎么读：</b>n 是"过程性质旋钮"：记住四条基准线的相对位置，任何 n 值的过程线都能徒手画出来；多变热容把任意过程的热量写成 q = c<sub>n</sub>ΔT 的统一形式。</p>
+      <p class="fig-key">🎯 重点：c<sub>n</sub> 四特例：n=0 → c<sub>p</sub>；n=1 → ∞；n=κ → 0；n→∞ → c<sub>V</sub>。当 1 &lt; n &lt; κ 时 c<sub>n</sub> &lt; 0——出现"吸热反而降温（膨胀）"的反直觉现象，难点考点。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-9</span>P32 表3-2 公式总表 + p-v / T-s 图 n 分布全景 <span class="tag b-star">⭐⭐⭐ 全章压轴图</span></div>
+      <img src="images/ch3-p32.jpg" loading="lazy" alt="热力过程公式总表与n分布图">
+      <p><b>图上有什么：</b>上：表 3-2"各种热力过程的计算公式"——五行（定容/定压/定温/定熵/多变）× 五列（过程方程式、初终态参数关系、w、w<sub>t</sub>、q），注：①忽略工质动位能变化；②精确计算可用平均比热容代替表内 c<sub>V</sub>、c<sub>p</sub>；③n=∞ 时除外。下：左 p-v 图：过同一点的 n=1、n=κ、n=0、n=±∞ 四条线把平面分成八个区，标注 Δu&gt;0 区、q&gt;0/q&lt;0 区、w&lt;0↔w&gt;0 分界；右 T-s 图：n=κ 垂直向上、n=0 与 n=1 两条指数线、n=±∞ 水平向左，同样标注 Δu、w、q 的正负分区。</p>
+      <p><b>怎么读：</b>表 3-2 就是"五过程一张表"的课件原版；两张全景图是定性分析神器——任意给一个 n 值，把过程线从公共点画出来，看它落在哪个区，就能<b>不计算</b>判断：膨胀还是压缩（w 正负）、吸热还是放热（q 正负）、升温还是降温（Δu 正负）。</p>
+      <p class="fig-key">🎯 重点：本章压轴能力＝"给 n 判性质"。例如 1 &lt; n &lt; κ 的膨胀过程：w&gt;0、q&lt;0（膨胀同时放热）、Δu&lt;0——全部可从图上直接读出；期末综合题的第一步往往就是画这张图。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-10</span>P33 综合例题【例题3-2】题面与 p-v 图 <span class="tag b-star">⭐ 例题</span></div>
+      <img src="images/ch3-p33.jpg" loading="lazy" alt="例题3-2题面与p-v图">
+      <p><b>图上有什么：</b>题面：0.3 m³ 氧气盛于有可移动活塞的圆筒中，t₁ = 45 ℃、p₁ = 1.032 bar；先<b>定压</b>加热（升温、膨胀），再<b>定容</b>冷却到初温 45 ℃，终了压力 p₃ = 0.588 bar；求两过程的吸热量、焓变、内能变化和做功。右侧 p-v 图：点 1（1.032 bar, v₁）→ 点 2（定压，v₂）→ 点 3（0.588 bar, 定容），1→3 之间有虚线"T = const"等温线；下方：R<sub>g</sub> = R/M = 8314/32 = 259.8 J/(kg·K)，m = p₀V₀/(R<sub>g</sub>T₀) = 1.032×10⁵×0.3/(259.8×273.15) = 0.4286 kg。</p>
+      <p><b>怎么读：</b>解题第一步永远是"画 p-v 图并标注三个状态"——1→2 定压水平线、2→3 定容垂直线、1 与 3 同温（落在同一条等温双曲线上）。</p>
+      <p class="fig-key">🎯 重点：氧气的 R<sub>g</sub> 由摩尔质量算（M = 32）；m 用标准状态或任意已知状态的状态方程求。这道题串联了状态方程 + 三个热力过程 + 定值摩尔热容，是本章最典型的综合题模板。</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><span class="fig-idx">图 3-11</span>P34 例题状态参数表与路径图 <span class="tag b-star">⭐ 例题</span></div>
+      <img src="images/ch3-p34.jpg" loading="lazy" alt="例题状态表与路径图">
+      <p><b>图上有什么：</b>状态表：状态 1/2/3 的压力（1.032 / 1.032 / 0.588 bar）、比容（0.8 / 1.4 / 1.4 m³/kg）、温度（318.15 / 556 / 318.15 K）；p-v 图与上页相同；计算链：1→3 等温线给出 v₃ = p₁v₁/p₃ = 1.4 m³/kg；1→2 定压：T₂ = (v₂/v₁)T₁ = 556 K；c<sub>p</sub> = (7/2)R/M = 0.9093 kJ/(kg·K)（氧为双原子，查定值摩尔热容表 C<sub>p,m</sub> = 7R/2）；W = mp(v₂−v₁) = 26.54 kJ（等压过程膨胀功计算）。</p>
+      <p><b>怎么读：</b>表格把"先参数、后公式"的解题纪律具象化：三个状态 × 三个基本参数全部填出，再逐段选公式。续页（P35）完成计算：定压段 Q = ΔH = 93.03 kJ，其中 ΔU = 66.39 kJ、W = 26.64 kJ；定容段 W = 0、Q = ΔU = −66.39 kJ（放热），技术功 w<sub>t</sub> = v(p₂−p₃)·m = +26.64 kJ；因初终温度相同，全程 ΔU = 0，净吸热 = 净做功 ≈ 26.6 kJ——能量守恒闭环自检。</p>
+      <p class="fig-key">🎯 重点：学习这套"填表法"：任何过程分析题都先列状态表 → 画 p-v/T-s 图 → 按 w、w<sub>t</sub>、q 公式逐段计算 → 用整体守恒验算。</p>
+    </div>
+
+    <div class="fig fig-photo">
+      <div class="fig-head"><span class="fig-idx">速览</span>第 3 章其余图片页</div>
+      <p><b>P1–2</b> 章首页与气体/蒸汽分子示意——气体远离液态不易液化，蒸汽离液态较近易液化，二者无严格界限。</p>
+      <p><b>P7</b> 单位自洽性检查图：m³/kg × kg/kmol = m³/kmol；J/m³ = N/m² = Pa——防止量纲错配。</p>
+      <p><b>P13、P19</b> 练习题（空气定压加热求 Δu；喷气发动机扩压器进气 78.8 kg/s；双罐连通混合平衡 1.05 bar / 37.25 kJ）——状态方程与第一定律的数值练习。</p>
+      <p><b>P15</b> 混合气体分子示意（不同点型共处一容器）——各组元"如同单独存在"。</p>
+      <p><b>P17–18</b> 成分定义圈图（w<sub>i</sub>、x<sub>i</sub>、φ<sub>i</sub> 均归一）与平均 M、R<sub>g</sub>、比热容加权公式页——公式见笔记 3.3 节。</p>
+      <p><b>P21</b> 热力过程研究目的/任务/依据 + 分析四步法（内燃机、蒸汽机卡通）——方法论页。</p>
+      <p><b>P24、P26、P28、P30–31</b> 定压/绝热/多变的公式推导与特例页（wt=nw 推导、多变热容四特例表）——结论均已并入笔记 3.4 节表格。</p>
+      <p><b>P35–36</b> 例题计算续页与结束页——数值见"图 3-11"说明。</p>
+    </div>
   </div>
 </section>
 
